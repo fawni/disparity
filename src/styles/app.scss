@@ -1,0 +1,234 @@
+@use "_vars.scss";
+@use "sass:color";
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("/fonts/DMSans.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "DM Mono";
+    src: url("/fonts/DMMono-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Mono";
+    src: url("/fonts/DMMono-Italic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Mono";
+    src: url("/fonts/DMMono-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Mono";
+    src: url("/fonts/DMMono-LightItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Mono";
+    src: url("/fonts/DMMono-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Mono";
+    src: url("/fonts/DMMono-MediumItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: vars.$accent-color;
+    color: vars.$background-primary;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+
+    margin: 20px 15px 50px;
+    max-width: 1200px;
+
+    background-color: vars.$background-primary;
+    color: vars.$text-color;
+    font-family: "DM Sans", sans-serif;
+}
+
+footer {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin: 0;
+}
+
+textarea {
+    border: 2px solid vars.$background-ternary;
+    border-radius: 4px;
+    background-color: vars.$background-secondary;
+    color: vars.$text-color;
+    font-family: "DM Mono", monospace;
+    resize: none;
+    width: 100%;
+    padding: 0.8rem;
+
+    &:focus {
+        outline: none;
+        border-color: vars.$accent-color;
+    }
+}
+
+a {
+    color: vars.$accent-color;
+    text-decoration: none;
+    cursor: pointer;
+    transition-property: opacity, text-decoration;
+    transition-duration: 0.15s;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    margin-bottom: 1.4rem;
+}
+
+#tagline {
+    opacity: 60%;
+}
+
+#tilde {
+    color: vars.$accent-color;
+}
+
+#diff-container {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+}
+
+#diff-mode {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1.4rem 0;
+
+    button {
+        background-color: vars.$background-secondary;
+        border: 2px solid vars.$background-ternary;
+        border-radius: 4px;
+        color: vars.$text-color;
+        padding: 0.4rem 2rem;
+        font: inherit;
+        line-height: inherit;
+    }
+}
+
+#diff-result {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+#result {
+    border: 2px solid vars.$background-ternary;
+    border-radius: 4px;
+    background-color: vars.$background-secondary;
+    color: vars.$text-color;
+    font-family: "DM Mono", monospace;
+    width: 100%;
+    padding: 0.8rem;
+}
+
+.diff {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.6rem;
+    text-align: center;
+}
+
+.diff-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.diff-add {
+    border: 2px solid vars.$add-color;
+    background-color: color.adjust(vars.$add-color, $alpha: -0.45);
+}
+
+.diff-remove {
+    border: 2px solid vars.$remove-color;
+    background-color: color.adjust(vars.$remove-color, $alpha: -0.45);
+}
+
+.diff-bottom-tools {
+    display: flex;
+    justify-content: space-between;
+}
+
+.diff-char-counter {
+    text-align: right;
+    // color: vars.$cyan-color;
+}
+
+.diff-clear {
+    color: vars.$remove-color;
+    text-align: left;
+    cursor: pointer;
+
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    line-height: inherit;
+
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
+    &:hover {
+        opacity: 50%;
+    }
+}
+
+.heart {
+    color: vars.$remove-color;
+    font-weight: bold;
+}
