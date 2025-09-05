@@ -27,16 +27,11 @@
 
 <div id="header">
 	<h1><span id="tilde">~</span>disparity</h1>
-	<div id="tagline">
-		<div>
-			smol diff checker to identify differences between two text blocks
-		</div>
-	</div>
 </div>
 
 <div id="diff-container">
 	<div class="diff">
-		<div class="diff-title">Version A</div>
+		<div class="diff-title">Text A</div>
 		<textarea bind:value={valueA} rows="10" spellcheck="false"></textarea>
 		<div class="diff-bottom-tools">
 			<button
@@ -48,7 +43,7 @@
 		</div>
 	</div>
 	<div class="diff">
-		<div class="diff-title">Version B</div>
+		<div class="diff-title">Text B</div>
 		<textarea bind:value={valueB} rows="10" spellcheck="false"></textarea>
 		<div class="diff-bottom-tools">
 			<button

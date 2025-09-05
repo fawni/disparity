@@ -127,10 +127,6 @@ a {
     margin-bottom: 1.4rem;
 }
 
-#tagline {
-    opacity: 60%;
-}
-
 #tilde {
     color: vars.$accent-color;
 }
@@ -139,6 +135,10 @@ a {
     display: flex;
     gap: 2rem;
     flex-direction: row;
+
+    @media (max-width: 850px) {
+        flex-direction: column;
+    }
 }
 
 #diff-mode {
