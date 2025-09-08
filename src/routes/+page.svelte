@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { diffChars, diffLines, diffWordsWithSpace } from "diff";
+	import { diffChars, diffLines, diffWordsWithSpace, type ChangeObject } from "diff";
 
 	let valueA: string = "";
 	$: lengthA = valueA.length;
@@ -7,11 +7,9 @@
 	let valueB: string = "";
 	$: lengthB = valueB.length;
 
-	$: mode = "word";
-
 	$: showResult = !!(valueA || valueB);
-	// $: diffResult = diffWordsWithSpace(valueA, valueB);
-	$: diffResult = ((): any => {
+	$: mode = "word";
+	$: diffResult = ((): ChangeObject<string>[] => {
 		switch (mode) {
 			case "word":
 				return diffWordsWithSpace(valueA, valueB);
