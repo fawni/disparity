@@ -27,6 +27,11 @@
 
 <div id="header">
 	<h1><span id="tilde">~</span>disparity</h1>
+	<div>
+		made with <span class="heart">♡</span> by
+		<b><a href="https://fawn.moe">fawn</a></b> — source at
+		<a href="https://codeberg.org/fawn/disparity">codeberg</a>
+	</div>
 </div>
 
 <div id="diff-container">
@@ -82,11 +87,3 @@
 		</div>
 	</div>
 {/if}
-
-<footer>
-	<div>
-		made with <span class="heart">♡</span> by
-		<b><a href="https://fawn.moe">fawn</a></b> — source at
-		<a href="https://codeberg.org/fawn/disparity">codeberg</a>
-	</div>
-</footer>

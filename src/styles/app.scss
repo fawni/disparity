@@ -84,10 +84,6 @@ body {
     font-family: "DM Sans", sans-serif;
 }
 
-footer {
-    text-align: center;
-}
-
 h1 {
     font-size: 2.5rem;
     font-weight: normal;
@@ -111,9 +107,10 @@ textarea {
 }
 
 a {
-    color: vars.$accent-color;
+    color: vars.$cyan-color;
     text-decoration: none;
     cursor: pointer;
+
     transition-property: opacity, text-decoration;
     transition-duration: 0.15s;
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
@@ -122,7 +119,7 @@ a {
 #header {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     text-align: center;
     margin-bottom: 1.4rem;
 }
